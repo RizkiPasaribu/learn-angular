@@ -3,24 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './user/home/home.component';
-import { HeroComponent } from './user/home/hero/hero.component';
-import { InfoComponent } from './user/home/info/info.component';
-import { GalleryComponent } from './user/home/gallery/gallery.component';
 
 /* -------------------------------------------------------------------------- */
 /*                                 Route List                                 */
 /* -------------------------------------------------------------------------- */
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     pathMatch: 'full',
-    redirectTo:'/user',
+    redirectTo: '/user',
   },
   {
     path: 'user',
     loadChildren: () =>
-      import('./user/home.module').then((m) => m.HomeModule),
+      import('./user/home/home.module').then((m) => m.HomeModule),
   },
 ];
 

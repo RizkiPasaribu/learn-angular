@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashbordIndexComponent } from './pages/dashbord-index/dashbord-index.component';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutSidebarComponent } from '../shared/layout/layout-user/layout-user.component';
-import { LayoutModule } from '../shared/layout/layout.module';
+import { LayoutModule } from '../../shared/layout/layout.module';
+import { LayoutUserComponent } from '../../shared/layout/layout-user/layout-user.component';
+import { HomeIndexComponent } from './pages/home-index/home-index.component';
 
 /* -------------------------------------------------------------------------- */
 /*                                 Route List                                 */
@@ -11,17 +11,16 @@ import { LayoutModule } from '../shared/layout/layout.module';
 const routes: Routes = [
   {
     path: '',
-    component: LayoutSidebarComponent,
-    children: [{ path: '', component: DashbordIndexComponent }],
+    component: LayoutUserComponent,
+    children: [{ path: '', component: HomeIndexComponent }],
   },
 ];
 
 /* -------------------------------------------------------------------------- */
-/*                                 Module List                                */
+/*                                 Module list                                */
 /* -------------------------------------------------------------------------- */
-
 @NgModule({
-  declarations: [DashbordIndexComponent],
+  declarations: [HomeIndexComponent],
   imports: [CommonModule, LayoutModule, RouterModule.forChild(routes)],
 })
-export class DashboardModule {}
+export class HomeModule {}

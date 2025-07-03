@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutSidebarComponent } from './layout-sidebar/layout-sidebar.component';
 import { RouterModule } from '@angular/router';
+import { LayoutUserComponent } from './layout-user/layout-user.component';
+import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 
 /* -------------------------------------------------------------------------- */
 /*                                 Module List                                */
 /* -------------------------------------------------------------------------- */
 @NgModule({
-  declarations: [LayoutSidebarComponent],
+  declarations: [LayoutUserComponent, LayoutAdminComponent],
   imports: [CommonModule, RouterModule],
-  exports: [LayoutSidebarComponent],
+  exports: [LayoutUserComponent, LayoutAdminComponent],
 })
 export class LayoutModule {}
